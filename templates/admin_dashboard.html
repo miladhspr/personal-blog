@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+<a href="/admin/new">Add New Article</a>
+<ul>
+    {{range .}}
+    <li>{{.Title}} - {{.Date}}
+        <a href="/admin/edit?id={{.ID}}">Edit</a>
+        <a href="/admin/delete?id={{.ID}}" onclick="return confirm('Are you sure?');">Delete</a>
+    </li>
+    {{else}}
+    <li>No articles found.</li>
+    {{end}}
+</ul>
+</body>
+</html>

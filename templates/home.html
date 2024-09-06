@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog - Home</title>
+</head>
+<body>
+<h1>Welcome to the Personal Blog</h1>
+<ul>
+    {{range .}}
+    <li><a href="/article?id={{.ID}}">{{.Title}}</a> - {{.Date}}</li>
+    {{else}}
+    <li>No articles found.</li>
+    {{end}}
+</ul>
+</body>
+</html>
